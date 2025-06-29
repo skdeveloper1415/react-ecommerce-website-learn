@@ -37,3 +37,33 @@ h1 {
 .nav-color {
   color: var(--nav-link-color)
 }
+.navbar_active {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.navbar .mobile-nav-icon {
+    display: inline-block;
+}
+
+.navbar .mobile-nav-icon.close-outline {
+  display: none;
+}
+
+.navbar_active .mobile-nav-icon {
+  display: none;
+}
+.navbar_active .mobile-nav-icon.close-outline {
+    display: inline-block;
+}
+
+.mobile-navbar {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+}

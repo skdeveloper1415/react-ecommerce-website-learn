@@ -1,21 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { CiShoppingCart } from "react-icons/ci";
+import { CgMenu, CgClose  } from "react-icons/cg";
 
 const Navbar = () => {
+  const [menuIcon, setMenuIcon] = useState();
   return (
-    <nav className='flex items-center gap-9'>
+    <>
+    <section className={menuIcon ? "navbar_active flex flex-col items-center justify-center" : "navbar flex items-center gap-4" }>
+    <nav className={menuIcon ? "flex-col items-center justify-center gap-9 max-md:flex" : "flex items-center gap-9 max-md:hidden" }>
       <ul>
-        <li className='flex items-center gap-5 text-base'>
+        <li className={menuIcon ? "flex flex-col items-center justify-center gap-3.5 text-2xl" : "flex items-center gap-5 text-base" }>
           <Link to={"/"} className='nav-color'>Home</Link>
           <Link to={"/"} className='nav-color'>About us</Link>
           <Link to={"/"} className='nav-color'>Products</Link>
           <Link to={"/"} className='nav-color'>Contact</Link>
         </li>
       </ul>
-      <Link to={"/"} className='relative'>
-      <CiShoppingCart className='text-2xl nav-color transition delay-150 duration-300 ease-in-out hover:text-amber-950 hover:scale-110' /><span className='cart-total-item absolute -top-1.5 bg-amber-500 rounded-full w-4 h-4 text-white text-[10px]'>10</span></Link>
+      <Link to={"/"} className='inline-block'><span className='bg-amber-600 text-white px-2 py-1.5 text-xs rounded-md'>Login</span></Link>
+      <Link to={"/"} className='relative inline-block'>
+      <CiShoppingCart className='text-2xl nav-color transition delay-150 duration-300 ease-in-out hover:text-amber-950 hover:scale-110' /><span className='cart-total-item absolute -top-1.5 bg-amber-500 rounded-full w-4 h-4 text-white text-[10px]'>10</span></Link>      
     </nav>
+    {/*Mobile Navbar BUtton*/}
+      <div className="mobile-navbar md:hidden">
+        <CgMenu name='mene-outline' className='mobile-nav-icon' onClick={() => setMenuIcon(true)} />
+        <CgClose name='close-outline' className='mobile-nav-icon close-outline' onClick={() => setMenuIcon(false)} />
+      </div>
+    </section>
+    </>
   )
 }
 
