@@ -11,10 +11,10 @@ const Navbar = () => {
     <nav className={menuIcon ? "flex-col items-center justify-center gap-9 max-md:flex" : "flex items-center gap-9 max-md:hidden" }>
       <ul>
         <li className={menuIcon ? "flex flex-col items-center justify-center gap-3.5 text-2xl" : "flex items-center gap-5 text-base" }>
-          <Link to={"/"} className='nav-color'>Home</Link>
-          <Link to={"/"} className='nav-color'>About us</Link>
-          <Link to={"/"} className='nav-color'>Products</Link>
-          <Link to={"/"} className='nav-color'>Contact</Link>
+          <Link to={"/"} className='nav-color' onClick={() => setMenuIcon(false)}>Home</Link>
+          <Link to={"/about"} className='nav-color' onClick={() => setMenuIcon(false)}>About us</Link>
+          <Link to={"/product"} className='nav-color' onClick={() => setMenuIcon(false)}>Products</Link>
+          <Link to={"/conatct"} className='nav-color' onClick={() => setMenuIcon(false)}>Contact</Link>
         </li>
       </ul>
       <Link to={"/"} className='inline-block'><span className='bg-amber-600 text-white px-2 py-1.5 text-xs rounded-md'>Login</span></Link>

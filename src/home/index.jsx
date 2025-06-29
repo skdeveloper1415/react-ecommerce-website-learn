@@ -1,6 +1,10 @@
+import Bannersection from "../components/Bannersection"
+
 const Home = () => {
   return (
-    <div className="">page</div>
+    <div className="">
+      <Bannersection name="Home page" page={"This is home page"} />
+    </div>
   )
 }
 
