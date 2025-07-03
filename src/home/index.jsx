@@ -7,7 +7,6 @@ const Home = () => {
   const { myData } = useContext(Appcontext);
   return (
     <div className="">
-      {myData}
       <Bannersection name="Home page" page={"This is home page"} />
       <FeatureServices />
     </div>
